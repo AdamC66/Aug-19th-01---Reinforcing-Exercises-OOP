@@ -18,9 +18,12 @@ class Location:
         self.name = name
 
 class Trip:
-    def __init__(self,stops):
-        self.stops = stops
+    def __init__(self):
+        self.stops = []
     
+    def add_stop (self, stop):
+        self.stops.append(stop)
+
     def describe_trip(self):
         print("Began trip")
         for i in range(len(self.stops)-1):
@@ -33,5 +36,9 @@ halifax = Location('Halifax')
 montreal = Location('Montreal')
 winnipeg = Location('Winnipeg') 
 
-my_trip = Trip([toronto, halifax, montreal, winnipeg])
+my_trip = Trip()
+my_trip.add_stop(toronto)
+my_trip.add_stop(halifax)
+my_trip.add_stop(montreal)
+my_trip.add_stop(winnipeg)
 my_trip.describe_trip()
